@@ -1,5 +1,8 @@
 import test, { expect } from "@playwright/test"
 
+
+//tests without POM
+
 test.describe('saucetest', () => {
     
     test.beforeEach(async ({ page }) => {
@@ -32,7 +35,7 @@ test.describe('saucetest', () => {
         await expect(page.getByTestId('shopping-cart-badge')).toBeVisible()
         await page.locator('#shopping_cart_container').click()
         await expect(page).toHaveURL('https://www.saucedemo.com/cart.html')
-        await expect(page.locator('item-4-title-link')).toBeVisible
+        await expect(page.locator('item-4-title-link')).toBeVisible()
     })
 
 
@@ -43,8 +46,8 @@ test.describe('saucetest', () => {
         await expect(page).toHaveURL('https://www.saucedemo.com/cart.html')
         await expect(page.locator('item-4-title-link')).toBeVisible
         await page.locator('#remove-sauce-labs-bolt-t-shirt').click()
-        await expect(page.locator('item-4-title-link')).not.toBeVisible
-        await expect(page.locator('div.removed_cart_item')).toBeVisible
+        await expect(page.locator('item-4-title-link')).not.toBeVisible()
+        await expect(page.locator('div.removed_cart_item')).toBeVisible()
         await expect(page.getByTestId('shopping-cart-badge')).not.toBeVisible()
     })
 
@@ -60,10 +63,10 @@ test.describe('saucetest', () => {
         await page.getByTestId('postalCode').fill('00011')
         await page.locator('#continue').click()
         await expect(page).toHaveURL('https://www.saucedemo.com/checkout-step-two.html')
-        await expect(page.locator('item-4-title-link')).toBeVisible
+        await expect(page.locator('item-4-title-link')).toBeVisible()
         await page.locator('#finish').click()
         await expect(page).toHaveURL('https://www.saucedemo.com/checkout-complete.html')
-        await expect(page.locator('#checkout_complete_container')).toBeVisible
+        await expect(page.locator('#checkout_complete_container')).toBeVisible()
     })
     
     
